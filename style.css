@@ -6,6 +6,12 @@ body{
   margin: 0;
   text-align: center;
   font-family: 'Merriweather', serif;
+  background-color: azure;
+}
+
+#profile{
+   margin-top: 3rem;
+   width: 15%;
 }
 
 .dot-seperator{
@@ -113,7 +119,7 @@ h1{
 h2{
   font-family: 'Montserrat', sans-serif;
   font-weight: normal;
-  margin-top: 6%;
+  margin-top: 3%;
 }
 
 h3{
