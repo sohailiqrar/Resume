@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Portfolio</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+      <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper-->
+    <div id="wrapper">
+      <!-- Nav -->
+      <nav id="nav">
+        <a href="#" class="icon solid fa-home"><span>Home</span></a>
+        <a href="#aboutme" class="icon solid fa-user"><span>Work</span></a>
+        <a href="#resume" class="icon solid fa-file"><span>Resume</span></a>
+        <a href="#contact" class="icon solid fa-envelope"
+          ><span>Contact</span></a
+        >
+        <a
+          href="https://www.linkedin.com/in/sohail-iqrar-98aa841a5/"
+          class="icon brands fa-linkedin"
+          target="_blank"
+          ><span>Twitter</span></a
+        >
+      </nav>
+
+      <!-- Main -->
+      <div id="main">
+        <!-- Me -->
+        <article id="home" class="panel intro">
+          <header>
+            <h1>Sohail Iqrar</h1>
+            <p>Software Developer Engineer</p>
+          </header>
+          <a href="#aboutme" class="jumplink pic">
+            <span class="arrow icon solid fa-chevron-right"
+              ><span>See my work</span></span
+            >
+            <img src="images/me1.jpg" alt="" />
+          </a>
+        </article>
+
+        <!-- Work -->
+        <article id="aboutme" class="panel">
+          <header>
+            <h2>About Me</h2>
+          </header>
+          <p>
+            As a seasoned software engineer, I bring a wealth of experience
+            garnered from diverse projects spanning various domains and
+            technologies. With a steadfast commitment to excellence and a
+            passion for innovation, I have navigated through the intricacies of
+            software development, consistently delivering robust solutions
+            tailored to meet the unique needs of each project.
+          </p>
+          <p>
+            My journey in software engineering has been characterized by a
+            multifaceted approach, marked by the adept utilization of an array
+            of technologies. Through meticulous analysis and strategic
+            implementation, I have contributed to the success of projects
+            ranging from web development and mobile applications to enterprise
+            solutions.
+          </p>
+          <p>
+            Driven by a relentless pursuit of mastery, I have cultivated
+            proficiency across a spectrum of programming languages, frameworks,
+            and tools, enabling me to adapt seamlessly to the evolving landscape
+            of technology. My ability to navigate complexities, coupled with a
+            penchant for collaborative problem-solving, has been instrumental in
+            driving projects to fruition, while maintaining an unwavering
+            commitment to quality and efficiency.
+          </p>
+          <p>
+            With a solid foundation in software engineering principles and a
+            proven track record of delivering impactful solutions, I am poised
+            to tackle new challenges and embark on endeavors that push the
+            boundaries of innovation. As I continue to evolve in this dynamic
+            field, I remain dedicated to leveraging my expertise to drive
+            meaningful change and contribute to the advancement of technology.
+          </p>
+        </article>
+
+        <!-- Resume -->
+        <article id="resume" class="panel">
+          <header>
+            <h2>Resume</h2>
+            <div style="margin-top: 2rem">
+              <embed
+                src="https://drive.google.com/file/d/1U7z3oJ659b8sm_5FOZeqGmrFzgoL33LB/view?usp=sharing"
+                type="application/pdf"
+                width="100%"
+                height="500px" />
+            </div>
+          </header>
+        </article>
+
+        <!-- Contact -->
+        <article id="contact" class="panel">
+          <header>
+            <h2>Contact Me</h2>
+          </header>
+          <form id="contactForm">
+            <div>
+              <div class="row">
+                <div class="col-6 col-12-medium">
+                  <input type="text" name="from_name" placeholder="Name" />
+                </div>
+                <div class="col-6 col-12-medium">
+                  <input type="text" name="user_email" placeholder="Email" />
+                </div>
+                <div class="col-12">
+                  <input type="text" name="subject" placeholder="Subject" />
+                </div>
+                <div class="col-12">
+                  <textarea
+                    name="message"
+                    placeholder="Message"
+                    rows="6"></textarea>
+                </div>
+                <div class="col-12">
+                  <input type="submit" value="Send Message" />
+                </div>
+              </div>
+            </div>
+          </form>
+        </article>
+      </div>
+
+      <!-- Footer -->
+      <div id="footer">
+        <ul class="copyright">
+          <li>&copy; sohailiqrar.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "fbQmskwwB0g0Pv_O7",
+        });
+      })();
+    </script>
+
+    <script>
+      // Email handling
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting
+
+          // Send email using EmailJS
+          emailjs.sendForm("service_qlm1lu2", "contact_form", this).then(
+            function (response) {
+              alert("Email sent successfully");
+            },
+            function (error) {
+              alert("error" + error);
+            }
+          );
+
+          document.getElementById("contactForm").reset();
+        });
+    </script>
+  </body>
+</html>
